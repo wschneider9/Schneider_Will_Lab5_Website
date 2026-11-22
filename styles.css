@@ -12,11 +12,11 @@
      Archivo       — everything else
    ============================================================ */
 
-@font-face { font-family: "Alfa Slab One"; src: url("fonts/alfa-slab-one.woff2") format("woff2"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "Archivo"; src: url("fonts/archivo-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "Archivo"; src: url("fonts/archivo-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
-@font-face { font-family: "Archivo"; src: url("fonts/archivo-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
-@font-face { font-family: "Archivo"; src: url("fonts/archivo-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Alfa Slab One"; src: url("alfa-slab-one.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Archivo"; src: url("archivo-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Archivo"; src: url("archivo-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Archivo"; src: url("archivo-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Archivo"; src: url("archivo-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
 
 :root {
   --accent: #4F6B8A;
