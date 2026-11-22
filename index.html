@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Threshold Realty | First-Time Homebuyers in Dallas</title>
+  <meta name="description" content="Threshold Realty helps first-time buyers find, afford, and close on a home in Dallas.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- =============== HERO: Dallas sunset, skyline, video =============== -->
+  <div class="sky">
+    <header class="site-header">
+      <nav class="wrap nav" aria-label="Main">
+        <a href="index.html" class="logo" aria-label="Threshold Realty home">
+          <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#4F6B8A" stroke-width="2.4" stroke-linejoin="round"><path d="M4 21V10l8-6 8 6v11"/><path d="M9.5 21v-7h5v7"/></svg></span>
+          <span class="logo-word">Threshold Realty<small>Dallas, Texas</small></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#neighborhoods">Neighborhoods</a></li>
+          <li><a href="#homes">Homes for sale</a></li>
+          <li><a href="#calculator">Payment calculator</a></li>
+          <li class="keep"><a href="guide.html" class="btn btn-sunset">Buyer guide</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="wrap hero-body">
+      <div>
+        <h1>Find your first home in Dallas.</h1>
+        <p class="lead">Threshold Realty works only with first-time buyers. We help you set a budget, choose a neighborhood, and get all the way to closing day.</p>
+        <div class="hero-actions">
+          <!-- Button to the second page (requirement 3) -->
+          <a href="guide.html" class="btn btn-dusk">Read the buyer guide</a>
+          <button type="button" class="btn btn-line" data-open-chat>Ask a homebuying question</button>
+        </div>
+      </div>
+
+      <!-- AI-generated video (requirements 1 + 2)
+           Save your ~5-second clip as media/hero-video.mp4.
+           autoplay + muted + loop + playsinline = plays on a loop as soon as the page opens. -->
+      <div class="video-frame" id="videoFrame">
+        <video id="heroVideo" autoplay muted loop playsinline preload="auto" aria-label="Threshold Realty video">
+          <source src="media/hero-video.mp4" type="video/mp4">
+        </video>
+        <div class="video-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 10l5-3v10l-5-3z"/></svg>
+          <strong>Your AI-generated video goes here</strong>
+          <span>Save the 5-second clip as media/hero-video.mp4 and it will play on a loop.</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="skyline" data-skyline></div>
+  </div>
+
+  <main>
+    <!-- =============== NEIGHBORHOODS =============== -->
+    <section class="hoods" id="neighborhoods">
+      <div class="wrap">
+        <h2>Where first-time buyers are looking</h2>
+        <p class="lead">Every part of Dallas comes with a different mix of price, commute, and character. Here's where many of our buyers start.</p>
+        <ul class="hood-list">
+          <li>
+            <span class="slab">Oak Cliff</span>
+            <span class="where">Across the Trinity from downtown</span>
+            <p>Older brick homes on tree-lined streets, close to the shops and restaurants of the Bishop Arts District.</p>
+          </li>
+          <li>
+            <span class="slab">Lake Highlands</span>
+            <span class="where">Northeast Dallas</span>
+            <p>Mid-century ranch houses near White Rock Lake and its trails.</p>
+          </li>
+          <li>
+            <span class="slab">Garland</span>
+            <span class="where">East of Dallas</span>
+            <p>One of the more affordable nearby suburbs, with light rail into downtown.</p>
+          </li>
+          <li>
+            <span class="slab">Richardson</span>
+            <span class="where">North of Dallas</span>
+            <p>Home to UT Dallas and a large tech job corridor, with established neighborhoods and parks.</p>
+          </li>
+          <li>
+            <span class="slab">Mesquite</span>
+            <span class="where">East of Dallas</span>
+            <p>Bigger lots for the money and a small-town feel. Yes, the one with the rodeo.</p>
+          </li>
+          <li>
+            <span class="slab">Irving</span>
+            <span class="where">West of Dallas</span>
+            <p>Next to DFW Airport and the Las Colinas business district, a short commute for many jobs.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =============== HOMES FOR SALE (with filters) =============== -->
+    <section class="band" id="homes">
+      <div class="wrap">
+        <div class="band-head">
+          <h2>Homes for sale now</h2>
+          <p class="lead">Starter homes we're showing this month. Narrow them down by ZIP code, price, and bedrooms.</p>
+        </div>
+
+        <div class="filters" aria-label="Filter homes">
+          <div class="filter-row">
+            <div class="filter-block">
+              <label class="filter-label" for="zipInput">ZIP code</label>
+              <input type="text" id="zipInput" inputmode="numeric" maxlength="5" pattern="[0-9]*" placeholder="e.g. 75224" list="zipList" autocomplete="postal-code">
+              <datalist id="zipList"></datalist>
+            </div>
+            <div class="filter-block">
+              <label class="filter-label" for="maxPrice">Max price</label>
+              <select id="maxPrice">
+                <option value="any">Any price</option>
+                <option value="300000">Under $300K</option>
+                <option value="350000">Under $350K</option>
+                <option value="400000">Under $400K</option>
+                <option value="450000">Under $450K</option>
+              </select>
+            </div>
+            <div class="filter-block">
+              <label class="filter-label" for="minBeds">Bedrooms</label>
+              <select id="minBeds">
+                <option value="0">Any</option>
+                <option value="2">2 or more</option>
+                <option value="3">3 or more</option>
+                <option value="4">4 or more</option>
+              </select>
+            </div>
+            <div class="filter-block">
+              <label class="filter-label" for="sortBy">Sort by</label>
+              <select id="sortBy">
+                <option value="low">Price, low to high</option>
+                <option value="high">Price, high to low</option>
+                <option value="size">Largest first</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="results-bar">
+          <p id="homeCount" aria-live="polite"></p>
+          <button type="button" class="text-btn" id="clearFilters" hidden>Clear filters</button>
+        </div>
+        <div class="home-grid" id="homeGrid"></div>
+        <p class="fine">Sample listings for this class project.</p>
+      </div>
+    </section>
+
+    <!-- =============== X-FACTOR: PAYMENT CALCULATOR =============== -->
+    <section class="band band-sky" id="calculator">
+      <div class="wrap">
+        <div class="band-head">
+          <h2>What would you pay each month?</h2>
+          <p class="lead">Move the sliders to see an estimated monthly payment, including the Texas property taxes and insurance that first-time buyers often forget.</p>
+        </div>
+        <div class="calc">
+          <div class="calc-inputs">
+            <div class="field">
+              <div class="field-row"><label for="price">Home price</label><output id="priceOut" for="price"></output></div>
+              <input type="range" id="price" min="100000" max="900000" step="5000" value="330000">
+            </div>
+            <div class="field">
+              <div class="field-row"><label for="down">Down payment</label><output id="downOut" for="down"></output></div>
+              <input type="range" id="down" min="3" max="30" step="0.5" value="10">
+            </div>
+            <div class="field">
+              <div class="field-row"><label for="rate">Interest rate</label><output id="rateOut" for="rate"></output></div>
+              <input type="range" id="rate" min="3" max="9" step="0.125" value="6.5">
+            </div>
+            <div class="field">
+              <div class="field-row"><span class="label" id="termLabel">Loan length</span></div>
+              <div class="term" role="group" aria-labelledby="termLabel">
+                <button type="button" data-term="30" aria-pressed="true">30 years</button>
+                <button type="button" data-term="15" aria-pressed="false">15 years</button>
+              </div>
+            </div>
+          </div>
+          <div class="calc-out" aria-live="polite">
+            <div class="sub">Estimated monthly payment</div>
+            <div class="big" id="total">$0</div>
+            <div class="sub" id="loanLine"></div>
+            <div class="stack" aria-hidden="true">
+              <span id="bPI" style="background:#4F6B8A"></span>
+              <span id="bTax" style="background:#8FA3BA"></span>
+              <span id="bIns" style="background:#BFCCDB"></span>
+              <span id="bPmi" style="background:#D4DCE5"></span>
+            </div>
+            <ul class="rows">
+              <li><span><i style="background:#4F6B8A"></i>Principal and interest</span><strong id="pi"></strong></li>
+              <li><span><i style="background:#8FA3BA"></i>Property tax, about 2% a year</span><strong id="tax"></strong></li>
+              <li><span><i style="background:#BFCCDB"></i>Homeowners insurance</span><strong id="ins"></strong></li>
+              <li><span><i style="background:#D4DCE5"></i>Mortgage insurance (PMI)</span><strong id="pmi"></strong></li>
+            </ul>
+            <p class="fine">Estimates for planning only, not a loan offer or financial advice. PMI applies when you put down less than 20%.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== CALL TO ACTION: PAGE 2 =============== -->
+    <section class="cta">
+      <div class="wrap">
+        <div>
+          <h2>Never bought a home before?</h2>
+          <p>Our buyer guide walks you through the six stops from first budget to front door.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="guide.html" class="btn btn-dusk">Read the buyer guide</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =============== FOOTER =============== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a href="index.html" class="logo">
+            <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#4F6B8A" stroke-width="2.4" stroke-linejoin="round"><path d="M4 21V10l8-6 8 6v11"/><path d="M9.5 21v-7h5v7"/></svg></span>
+            <span class="logo-word">Threshold Realty</span>
+          </a>
+          <p>We help first-time buyers across Dallas, Garland, Richardson, Mesquite, and Irving.</p>
+        </div>
+        <div>
+          <h4>On this site</h4>
+          <ul>
+            <li><a href="#neighborhoods">Neighborhoods</a></li>
+            <li><a href="#homes">Homes for sale</a></li>
+            <li><a href="#calculator">Payment calculator</a></li>
+            <li><a href="guide.html">Buyer guide</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get help</h4>
+          <ul>
+            <li><a href="#" data-open-chat>Ask a homebuying question</a></li>
+            <li>Free HUD housing counseling: 1-800-569-4287</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- X-factor description (requirement 5, under 50 words) -->
+      <p class="xfactor"><strong>X-factor: interactive payment calculator.</strong> Slide the home price, down payment, and interest rate, or switch between 15- and 30-year loans, to see an estimated monthly payment with taxes, insurance, and PMI broken out. It helps first-time buyers set a realistic budget before touring homes.</p>
+
+      <p class="legal">&copy; 2026 Threshold Realty, a fictional business created for a class project.</p>
+    </div>
+  </footer>
+
+  <script>
+    /* Video: start playing on a loop as soon as it loads */
+    (function () {
+      const video = document.getElementById("heroVideo");
+      const frame = document.getElementById("videoFrame");
+      const ready = () => frame.classList.add("has-video");
+      video.addEventListener("loadeddata", ready);
+      if (video.readyState >= 2) ready();
+      const p = video.play();
+      if (p && p.catch) p.catch(() => {});
+    })();
+
+    /* X-factor: payment calculator */
+    (function () {
+      const $ = id => document.getElementById(id);
+      const money = n => "$" + Math.round(n).toLocaleString("en-US");
+      const TAX = 0.02, INSURANCE_YEAR = 2400, PMI = 0.005;
+      let years = 30;
+
+      function update() {
+        const price = +$("price").value, downPct = +$("down").value, rate = +$("rate").value;
+        const down = price * downPct / 100, loan = price - down;
+        const r = rate / 1200, n = years * 12;
+        const pi = loan * r / (1 - Math.pow(1 + r, -n));
+        const tax = price * TAX / 12, ins = INSURANCE_YEAR / 12;
+        const pmi = downPct < 20 ? loan * PMI / 12 : 0;
+        const total = pi + tax + ins + pmi;
+
+        $("priceOut").textContent = money(price);
+        $("downOut").textContent = downPct + "%, " + money(down);
+        $("rateOut").textContent = (+rate.toFixed(3)) + "%";
+        $("total").textContent = money(total);
+        $("loanLine").textContent = "Borrowing " + money(loan) + " over " + years + " years";
+        $("pi").textContent = money(pi);
+        $("tax").textContent = money(tax);
+        $("ins").textContent = money(ins);
+        $("pmi").textContent = money(pmi);
+        [["bPI", pi], ["bTax", tax], ["bIns", ins], ["bPmi", pmi]].forEach(([id, v]) => $(id).style.width = (v / total * 100) + "%");
+      }
+
+      ["price", "down", "rate"].forEach(id => $(id).addEventListener("input", update));
+      document.querySelectorAll("[data-term]").forEach(b => b.addEventListener("click", () => {
+        years = +b.dataset.term;
+        document.querySelectorAll("[data-term]").forEach(x => x.setAttribute("aria-pressed", x === b));
+        update();
+      }));
+      update();
+    })();
+  </script>
+  <script src="skyline.js"></script>
+  <script src="listings.js"></script>
+  <!-- Chatbot on this page (requirement 4) -->
+  <script src="chat.js"></script>
+</body>
+</html>
